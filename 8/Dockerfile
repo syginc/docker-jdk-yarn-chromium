@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk
 
-# Install node 6.x
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - 
+# Install node 8.x
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - 
 RUN apt-get install -y nodejs
 
 # Install yarn
@@ -11,7 +11,11 @@ RUN apt-get update
 RUN apt-get install -y yarn
 
 # Install chromium
-RUN apt-get install -y chromium chromedriver
+RUN apt-get install -y chromium chromedriver fonts-noto-cjk
 
 RUN apt-get upgrade -y
 
+# Clean up
+RUN rm -rf /var/lib/apt/lists/*
+
+ENV CHROME_PATH /usr/bin/chromium
