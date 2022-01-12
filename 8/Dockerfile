@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-buster
 
 # Install node 8.x
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - 
-RUN apt-get install -y nodejse
+RUN apt-get install -y nodejs
 
 # Install yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - 
