@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-buster
+FROM openjdk:8-jdk-slim
 
 # Install node 8.x
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - 
